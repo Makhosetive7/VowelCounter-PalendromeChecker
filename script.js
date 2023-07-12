@@ -4,7 +4,7 @@ const VowelCountAndCheckPalendrome = () => {
     const checkPalendrome = Palendrome(textarea)
     const results = document.getElementById("results")
 
-    results.innerHTML = "Number of Vowels:" + countVowels + "and" + + "<br> isPalendrome" + checkPalendrome 
+    results.innerHTML = "Number of Vowels: " + countVowels + "<br> isPalindrome: " + checkPalendrome;
 }
 
 const Palendrome = (string)=> {

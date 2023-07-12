@@ -7,16 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <Fragment>
-      <textarea
-        class="textarea"
-        id="textarea"
-        placeholder="start typing"
-      ></textarea>
-      <button onclick="VowelCountAndCheckPalendrome()">start Count</button>
-    </Fragment>
+    <textarea id="textarea" oninput="changeVowelColor()" placeholder="Vowels and Palendrome words are tested inside me"></textarea>
+    <button onclick="VowelCountAndCheckPalendrome()">start Count</button>
 
-    <div id="results"></div>
+    <div id="results">
+      <p>Vowel Count and Palendrome check results will be displayed here</p>
+    </div>
+
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
