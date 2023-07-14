@@ -1,35 +1,35 @@
-/*const VowelCountAndCheckPalendrome = () => {
-    const textarea = document.getElementById("textarea").value
-    const countVowels = Vowels(textarea)
-    const checkPalendrome = Palendrome(textarea)
-    const results = document.getElementById("results")
+const VowelCountAndCheckPalendrome = () => {
+  const textarea = document.getElementById("textarea").value;
+  const countVowels = Vowels(textarea);
+  const checkPalindrome = Palindrome(textarea);
+  const results = document.getElementById("results");
 
-    results.innerHTML = "Number of Vowels: " + countVowels + "<br> isPalindrome: " + checkPalendrome;
-}
+  results.innerHTML = "Number of Vowels: " + countVowels + "<br> isPalindrome: " + checkPalindrome;
+};
 
-const Palendrome = (string)=> {
-    const reversedstring = string.split("").reverse().join("")
-    return string.toLowerCase() === reversedstring.toLowerCase()
-}
+const Palindrome = (string) => {
+  const reversedString = string.split("").reverse().join("");
+  return string.toLowerCase() === reversedString.toLowerCase();
+};
 
 const Vowels = (string) => {
-    let vowelscount=0;
-    let vowelsArray = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"]
+  let vowelsCount = 0;
+  const vowelsArray = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u"];
 
-    for (const char of string.toLowerCase()) {
-        if (vowelsArray.includes(char)) {
-            return vowelscount++
-        }
+  for (const char of string.toLowerCase()) {
+    if (vowelsArray.includes(char)) {
+      vowelsCount++;
     }
-    return vowelscount
-}
-*/
+  }
+  return vowelsCount;
+};
 
 //Three js code
 let scene, camera, renderer, cube, sphere, plane, cone;
 
 function init() {
   scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xffffff)
   camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -42,27 +42,28 @@ function init() {
   document.body.appendChild(renderer.domElement);
 
   const geometry = new THREE.BoxGeometry(20, 20, 20);
-  const texture = new THREE.TextureLoader().load("./Textures/Alpha1.jpg")
+  const texture = new THREE.TextureLoader().load("./Textures/Alpha5.jpg")
   const material = new THREE.MeshBasicMaterial({ map: texture });
   cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 
   const geometry2 = new THREE.PlaneGeometry(20, 20);
-  const texture2 = new THREE.TextureLoader().load("./Textures/Alpha4.jpg")
+  const texture2 = new THREE.TextureLoader().load("./Textures/Alpha5.jpg")
   const material2 = new THREE.MeshBasicMaterial({
     map: texture2
   });
   plane = new THREE.Mesh(geometry2, material2);
   scene.add(plane);
 
-  const geometry3 = new THREE.ConeGeometry(20, 20, 20);
-  const texture3 = new THREE.TextureLoader().load("./Textures/Alpha2.jpg")
+  const geometry3 = new THREE.ConeGeometry(10, 20, 5);
+  const texture3 = new THREE.TextureLoader().load("./Textures/Alpha5.jpg")
   const material3 = new THREE.MeshBasicMaterial({ map: texture3 });
   cone = new THREE.Mesh(geometry3, material3);
   scene.add(cone);
 
   const geometry4 = new THREE.SphereGeometry(15, 32, 16);
-  const material4 = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+  const texture4 = new THREE.TextureLoader().load("./Textures/Alpha5.jpg")
+  const material4 = new THREE.MeshBasicMaterial({ map: texture4 });
   sphere = new THREE.Mesh(geometry4, material4);
   scene.add(sphere);
 

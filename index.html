@@ -7,14 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    <!----<textarea id="textarea" oninput="changeVowelColor()" placeholder="Vowels and Palendrome words are tested inside me"></textarea>
-    <button onclick="VowelCountAndCheckPalendrome()">start Count</button>
+    <div class="prompt">
+      <textarea id="textarea" placeholder="Vowels and Palindrome words are tested inside me"></textarea>
+      <button onclick="VowelCountAndCheckPalendrome()">start Count</button>
 
-    <div id="results">
-      <p>Vowel Count and Palendrome check results will be displayed here</p>
-    </div>--->
+      <div id="results">
+        <p>Vowel Count and Palindrome check results will be displayed here</p>
+      </div>
+    </div>
+    <div id="canvas-container"></div>
 
-    <script type="module" src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
